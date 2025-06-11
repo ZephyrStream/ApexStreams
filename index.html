@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="StreamVerse IPTV - Premium IPTV service with global live channels and VOD.">
+    <meta name="keywords" content="IPTV, streaming, live TV, VOD, StreamVerse">
+    <meta name="theme-color" content="#1e1b4b">
+    <title>StreamVerse IPTV - Your Entertainment Universe</title>
+    <link rel="manifest" href="/manifest.json">
+    <link rel="apple-touch-icon" href="/assets/images/icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="/assets/css/styles.css">
+</head>
+<body>
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="loader-logo">StreamVerse</div>
+    </div>
+
+    <!-- Particle Background -->
+    <canvas id="hero-particles"></canvas>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <a href="/" class="logo"><img src="/assets/images/logo.png" alt="StreamVerse Logo" width="150"></a>
+            <nav class="main-nav">
+                <a href="/features.html">Features</a>
+                <a href="/channels.html">Channels</a>
+                <a href="/pricing.html">Pricing</a>
+                <a href="/faq.html">FAQ</a>
+                <a href="/contact.html">Contact</a>
+            </nav>
+            <i class="fas fa-bars hamburger"></i>
+            <a href="/pricing.html" class="btn">Get Started</a>
+        </div>
+        <nav class="mobile-nav">
+            <a href="/features.html">Features</a>
+            <a href="/channels.html">Channels</a>
+            <a href="/pricing.html">Pricing</a>
+            <a href="/faq.html">FAQ</a>
+            <a href="/contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1 class="reveal-text">Your Gateway to Global Entertainment</h1>
+            <p class="reveal-text">Experience ultra-fast IPTV with over 30,000 live channels and a vast VOD library, powered by cutting-edge technology.</p>
+            <div class="search-bar reveal-text">
+                <input type="text" id="search-input" placeholder="Search channels or shows..." aria-label="Search for content">
+                <button class="btn btn-search">Search</button>
+            </div>
+            <a href="/features.html" class="btn reveal-text">Explore Now</a>
+        </div>
+    </section>
+
+    <!-- Features Preview -->
+    <section class="features-preview">
+        <div class="container">
+            <h2>Why Choose StreamVerse?</h2>
+            <p class="section-subtitle">Unmatched quality and innovation for your streaming needs.</p>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <i class="fas fa-globe"></i>
+                    <h3>Global Content</h3>
+                    <p>Access thousands of live channels and VOD from every corner of the world.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-bolt"></i>
+                    <h3>Zero Buffering</h3>
+                    <p>Proprietary streaming tech ensures smooth playback in up to 8K.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-robot"></i>
+                    <h3>AI Recommendations</h3>
+                    <p>Personalized content suggestions based on your viewing habits.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <h2>Ready to Stream?</h2>
+            <p class="section-subtitle">Join thousands of users enjoying StreamVerse today.</p>
+            <a href="/pricing.html" class="btn">Get Started Now</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="/" class="logo"><img src="/assets/images/logo.png" alt="StreamVerse Logo" width="150"></a>
+                    <p>Your ultimate IPTV solution for premium entertainment.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Explore</h4>
+                    <a href="/features.html">Features</a>
+                    <a href="/channels.html">Channels</a>
+                    <a href="/pricing.html">Pricing</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Support</h4>
+                    <a href="/faq.html">FAQ</a>
+                    <a href="/contact.html">Contact</a>
+                    <a href="/terms.html">Terms</a>
+                    <a href="/privacy.html">Privacy</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Stay Connected</h4>
+                    <form class="newsletter-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                        <input type="email" name="email" placeholder="Enter your email" aria-label="Email for newsletter" required>
+                        <button class="btn">Subscribe</button>
+                    </form>
+                    <div class="social-icons">
+                        <a href="https://t.me/streamverseiptv" target="_blank" aria-label="Telegram"><i class="fab fa-telegram"></i></a>
+                        <a href="https://discord.gg/streamverse" target="_blank" aria-label="Discord"><i class="fab fa-discord"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 StreamVerse IPTV. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="/assets/js/main.js"></script>
+</body>
+</html>
