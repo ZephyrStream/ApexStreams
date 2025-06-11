@@ -88,4 +88,148 @@ if (document.getElementById('hero-particles')) {
 
     function connectParticles() {
         for (let a = 0; a < particlesArray.length; a++) {
-            for
+            for (let b = a; b < particlesArray.length; b++) {
+                let distance = ((particlesArray[a].x - particlesArray[b].x) ** 2) + ((particlesArray[a].y - particlesArray[b].y) ** 2);
+                if (distance < 10000) {
+                    ctx.strokeStyle = `rgba(124, 58, 237, ${1 - distance / 10000})`;
+                    ctx.lineWidth = 1;
+                    ctx.beginPath();
+                    ctx.moveTo(particlesArray[a].x, particlesArray[a].y);
+                    ctx.lineTo(particlesArray[b].x, particlesArray[b].y);
+                    ctx.stroke();
+                }
+            }
+        }
+    }
+
+    function animateParticles() {
+        requestAnimationFrame(animateParticles);
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        for (let i = 0; i < particlesArray.length; i++) {
+            particlesArray[i].update();
+        }
+        connectParticles();
+    }
+
+    initParticles();
+    animateParticles();
+
+    window.addEventListener('resize', () => {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        initParticles();
+    });
+}
+
+// GSAP Animations
+gsap.registerPlugin(ScrollTrigger);
+
+gsap.from('.reveal-text', {
+    y: 60,
+    opacity: 0,
+    duration: 1,
+    stagger: 0.2,
+    ease: 'power3.out'
+});
+
+gsap.from('.feature-card', {
+    scrollTrigger: {
+        trigger: '.features-grid',
+        start: 'top 80%'
+    },
+    y: 50,
+    opacity: 0,
+    duration: 0.8,
+    stagger: 0.1,
+    ease: 'power3.out'
+});
+
+gsap.from('.channel-card', {
+    scrollTrigger: {
+        trigger: '.channels-grid',
+        start: 'top 80%'
+    },
+    y: 50,
+    opacity: 0,
+    duration: 0.8,
+    stagger: 0.1,
+    ease: 'power3.out'
+});
+
+gsap.from('.pricing-card', {
+    scrollTrigger: {
+        trigger: '.pricing-grid',
+        start: 'top 80%'
+    },
+    y: 50,
+    opacity: 0,
+    duration: 0.8,
+    stagger: 0.1,
+    ease: 'power3.out'
+});
+
+gsap.from('.faq-item', {
+    scrollTrigger: {
+        trigger: '.faq',
+        start: 'top 80%'
+    },
+    y: 50,
+    opacity: 0,
+    duration: 0.8,
+    stagger: 0.1,
+    ease: 'power3.out'
+});
+
+gsap.from('.contact-form, .contact-info', {
+    scrollTrigger: {
+        trigger: '.contact-grid',
+        start: 'top 80%'
+    },
+    y: 50,
+    opacity: 0,
+    duration: 0.8,
+    stagger: 0.2,
+    ease: 'power3.out'
+});
+
+// FAQ Accordion
+document.querySelectorAll('.faq-question').forEach(item => {
+    item.addEventListener('click', () => {
+        const parent = item.parentElement;
+        parent.classList.toggle('active');
+    });
+});
+
+// Client-Side Search
+const searchInput = document.getElementById('search-input');
+const searchButton = document.querySelector('.btn-search');
+if (searchInput && searchButton) {
+    searchButton.addEventListener('click', () => {
+        const query = searchInput.value.trim().toLowerCase();
+        if (query) {
+            fetch('/assets/data/channels.json')
+                .then(response => response.json())
+                .then(channels => {
+                    const results = channels.filter(channel => 
+                        channel.name.toLowerCase().includes(query) || 
+                        channel.category.toLowerCase().includes(query)
+                    );
+                    if (results.length > 0) {
+                        alert(`Found ${results.length} channel(s): ${results.map(c => c.name).join(', ')}`);
+                    } else {
+                        alert('No channels found for your search.');
+                    }
+                })
+                .catch(error => console.error('Error fetching channels:', error));
+        } else {
+            alert('Please enter a search term.');
+        }
+    });
+}
+
+// PWA Service Worker
+if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/service-worker.js')
+        .then(reg => console.log('Service Worker Registered'))
+        .catch(err => console.error('Service Worker Error:', err));
+}
