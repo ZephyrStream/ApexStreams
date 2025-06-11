@@ -1,0 +1,17 @@
+[
+    {
+        "name": "Live Sports HD",
+        "category": "Sports",
+        "image": "/assets/images/sports-channel.webp"
+    },
+    {
+        "name": "Blockbuster Movies",
+        "category": "Movies",
+        "image": "/assets/images/movie-channel.webp"
+    },
+    {
+        "name": "Global News Network",
+        "category": "News",
+        "image": "/assets/images/news-channel.webp"
+    }
+]
